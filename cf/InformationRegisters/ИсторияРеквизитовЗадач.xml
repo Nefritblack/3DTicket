@@ -73,6 +73,7 @@
 					<Comment/>
 					<Type>
 						<v8:Type>cfg:CatalogRef.Проекты</v8:Type>
+						<v8:Type>xs:boolean</v8:Type>
 						<v8:Type>cfg:CatalogRef.СтатусыЗадач</v8:Type>
 						<v8:Type>xs:string</v8:Type>
 						<v8:Type>xs:dateTime</v8:Type>

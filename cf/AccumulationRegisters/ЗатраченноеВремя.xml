@@ -51,11 +51,11 @@
 		<ChildObjects>
 			<Resource uuid="ce9b9d59-bd32-460c-b6ea-b6bd8700bc50">
 				<Properties>
-					<Name>Часов</Name>
+					<Name>Секунд</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Часов</v8:content>
+							<v8:content>Секунд</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

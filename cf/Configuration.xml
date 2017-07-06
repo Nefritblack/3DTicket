@@ -132,6 +132,7 @@
 			<Catalog>Проекты</Catalog>
 			<Catalog>СтатусыЗадач</Catalog>
 			<Document>Задача</Document>
+			<Report>ПредварительнаяСтоимостьЗадач</Report>
 			<InformationRegister>ИсторияРеквизитовЗадач</InformationRegister>
 			<InformationRegister>ИсторияОписанийЗадач</InformationRegister>
 			<InformationRegister>КомментарииЗадач</InformationRegister>
