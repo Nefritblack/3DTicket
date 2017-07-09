@@ -120,14 +120,18 @@
 			<Language>Русский</Language>
 			<SessionParameter>ТекущийПользователь</SessionParameter>
 			<Role>root</Role>
+			<Role>Заказчик</Role>
 			<CommonTemplate>РабочийСтол</CommonTemplate>
 			<CommonModule>ОбщиеФункции</CommonModule>
 			<CommonModule>КонвертацияТипов</CommonModule>
 			<CommonModule>ОтборыСписковКлиентСервер</CommonModule>
+			<CommonModule>КлиентГлобальный</CommonModule>
+			<CommonModule>МодульКлиента</CommonModule>
 			<DefinedType>Рубли</DefinedType>
 			<DefinedType>Секунда</DefinedType>
 			<DefinedType>Час</DefinedType>
 			<CommonForm>РабочийСтол</CommonForm>
+			<CommonForm>РабочийСтолЗаказчика</CommonForm>
 			<Catalog>Пользователи</Catalog>
 			<Catalog>Проекты</Catalog>
 			<Catalog>СтатусыЗадач</Catalog>
