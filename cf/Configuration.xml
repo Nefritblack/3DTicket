@@ -118,6 +118,7 @@
 		</Properties>
 		<ChildObjects>
 			<Language>Русский</Language>
+			<CommonPicture>АнимацияСфера</CommonPicture>
 			<SessionParameter>ТекущийПользователь</SessionParameter>
 			<Role>root</Role>
 			<Role>Заказчик</Role>
