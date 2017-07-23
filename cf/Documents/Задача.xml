@@ -683,6 +683,7 @@
 			</Attribute>
 			<Form>ФормаСписка</Form>
 			<Form>ФормаДокумента</Form>
+			<Form>ФормаВсеРеквизиты</Form>
 		</ChildObjects>
 	</Document>
 </MetaDataObject>

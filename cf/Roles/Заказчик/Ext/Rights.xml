@@ -29,6 +29,20 @@
 		</right>
 	</object>
 	<object>
+		<name>AccumulationRegister.ОплаченноеВремя</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>ГДЕ Проект.Доступность.Пользователь = &amp;ТекущийПользователь</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Document.Задача</name>
 		<right>
 			<name>Read</name>
@@ -70,6 +84,31 @@
 	</object>
 	<object>
 		<name>AccumulationRegister.ЗатраченноеВремя</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>ГДЕ Проект.Доступность.Пользователь = &amp;ТекущийПользователь</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Report.ОплатыЗадач</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.ПодтвержденноеВремя</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>

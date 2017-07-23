@@ -34,6 +34,20 @@
 						<Event name="Click">ОткрытьПредвРасчетНажатие</Event>
 					</Events>
 				</LabelDecoration>
+				<LabelDecoration name="ОткрытьОтчетОплат" id="14">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оплаты задач</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="ОткрытьОтчетОплатКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ОткрытьОтчетОплатРасширеннаяПодсказка" id="16"/>
+					<Events>
+						<Event name="Click">ОткрытьОтчетОплатНажатие</Event>
+					</Events>
+				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="Настройки" id="9">

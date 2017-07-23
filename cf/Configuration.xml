@@ -128,16 +128,20 @@
 			<Role>root</Role>
 			<Role>Заказчик</Role>
 			<CommonTemplate>РабочийСтол</CommonTemplate>
+			<CommonTemplate>ДиаграмаГанта</CommonTemplate>
 			<CommonModule>ОбщиеФункции</CommonModule>
 			<CommonModule>КонвертацияТипов</CommonModule>
 			<CommonModule>ОтборыСписковКлиентСервер</CommonModule>
 			<CommonModule>КлиентГлобальный</CommonModule>
 			<CommonModule>МодульКлиента</CommonModule>
+			<CommonModule>УчетВремени</CommonModule>
 			<DefinedType>Рубли</DefinedType>
 			<DefinedType>Секунда</DefinedType>
 			<DefinedType>Час</DefinedType>
+			<CommonCommand>ОткрытьУчетВремени</CommonCommand>
 			<CommonForm>РабочийСтол</CommonForm>
 			<CommonForm>РабочийСтолЗаказчика</CommonForm>
+			<CommonForm>ЗагруженностьСотрудника</CommonForm>
 			<Catalog>Пользователи</Catalog>
 			<Catalog>Проекты</Catalog>
 			<Catalog>СтатусыЗадач</Catalog>

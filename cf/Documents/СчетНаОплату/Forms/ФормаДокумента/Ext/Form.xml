@@ -110,6 +110,36 @@
 				</InputField>
 			</ChildItems>
 		</Table>
+		<UsualGroup name="Группа2" id="48">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="49"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация1" id="50">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="52"/>
+				</LabelDecoration>
+				<LabelField name="ЗадачиКоличествоСтрок" id="56">
+					<DataPath>Объект.Задачи.RowsCount</DataPath>
+					<ContextMenu name="ЗадачиКоличествоСтрокКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ЗадачиКоличествоСтрокРасширеннаяПодсказка" id="58"/>
+				</LabelField>
+				<LabelField name="ЗадачиИтогСекунд" id="53">
+					<DataPath>Объект.Задачи.TotalСекунд</DataPath>
+					<ContextMenu name="ЗадачиИтогСекундКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="ЗадачиИтогСекундРасширеннаяПодсказка" id="55"/>
+				</LabelField>
+				<LabelField name="ЗадачиИтогСумма" id="45">
+					<DataPath>Объект.Задачи.TotalСумма</DataPath>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="ЗадачиИтогСуммаКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="ЗадачиИтогСуммаРасширеннаяПодсказка" id="47"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">

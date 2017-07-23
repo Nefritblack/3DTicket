@@ -87,14 +87,25 @@
 			</role>
 			<presentationExpression>ПредставлениеПериода(Неделя, КонецПериода(Неделя, "Неделя")</presentationExpression>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Описание</dataPath>
+			<field>Описание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Описание</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
-	Проект, Пользователь, Задача, 
+	Проект, Пользователь, Задача, ВЫРАЗИТЬ(Задача.Описание КАК СТРОКА(255)) Описание,
 	ПериодМесяц Месяц, ПериодНеделя Неделя,
 	СекундОборот / 3600 Затрачено, СуммаПриход Сумма
 	
 ИЗ
-	РегистрНакопления.ЗатраченноеВремя.Обороты(,,Авто)</query>
+	РегистрНакопления.ЗатраченноеВремя.Обороты(,,Авто)
+</query>
 	</dataSet>
 	<totalField>
 		<dataPath>Затрачено</dataPath>
@@ -295,7 +306,7 @@
 					<dcsset:item xsi:type="dcsset:StructureItemGroup">
 						<dcsset:groupItems>
 							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>Задача.Описание</dcsset:field>
+								<dcsset:field>Описание</dcsset:field>
 								<dcsset:groupType>Items</dcsset:groupType>
 								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -307,7 +318,7 @@
 						</dcsset:order>
 						<dcsset:selection>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Задача.Описание</dcsset:field>
+								<dcsset:field>Описание</dcsset:field>
 							</dcsset:item>
 						</dcsset:selection>
 						<dcsset:outputParameters>

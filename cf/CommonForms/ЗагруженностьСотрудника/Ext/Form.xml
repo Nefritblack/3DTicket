@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="21">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="22"/>
+			<ChildItems>
+				<InputField name="Сотрудник" id="15">
+					<DataPath>Сотрудник</DataPath>
+					<ContextMenu name="СотрудникКонтекстноеМеню" id="16"/>
+					<ExtendedTooltip name="СотрудникРасширеннаяПодсказка" id="17"/>
+					<Events>
+						<Event name="OnChange">СотрудникПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Проект" id="18">
+					<DataPath>Проект</DataPath>
+					<ContextMenu name="ПроектКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="ПроектРасширеннаяПодсказка" id="20"/>
+					<Events>
+						<Event name="OnChange">ПроектПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="7"/>
+			<ChildItems>
+				<Page name="СтраницаКалендарь" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Календарь</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница календарь</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаКалендарьРасширеннаяПодсказка" id="9"/>
+					<ChildItems>
+						<CommandBar name="Кнопочки" id="4">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кнопочки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кнопочки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<CommandSource>Item.Календарь</CommandSource>
+							<ExtendedTooltip name="КнопочкиРасширеннаяПодсказка" id="5"/>
+						</CommandBar>
+						<PlannerField name="Календарь" id="1">
+							<DataPath>Календарь</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="КалендарьКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="КалендарьРасширеннаяПодсказка" id="3"/>
+						</PlannerField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаГант" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Гант</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница гант</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ExtendedTooltip name="СтраницаГантРасширеннаяПодсказка" id="11"/>
+					<ChildItems>
+						<GanttChartField name="Гант" id="12">
+							<DataPath>Гант</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="ГантКонтекстноеМеню" id="13"/>
+							<ExtendedTooltip name="ГантРасширеннаяПодсказка" id="14"/>
+						</GanttChartField>
+						<CalendarField name="Календарик" id="23">
+							<DataPath>Календарик</DataPath>
+							<ShowMonthsPanel>true</ShowMonthsPanel>
+							<ContextMenu name="КалендарикКонтекстноеМеню" id="24"/>
+							<ExtendedTooltip name="КалендарикРасширеннаяПодсказка" id="25"/>
+						</CalendarField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаHTML" id="26">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Гант WEB</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница HTML</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаHTMLРасширеннаяПодсказка" id="27"/>
+					<ChildItems>
+						<HTMLDocumentField name="ГантВеб" id="28">
+							<DataPath>ГантВеб</DataPath>
+							<ContextMenu name="ГантВебКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="ГантВебРасширеннаяПодсказка" id="30"/>
+						</HTMLDocumentField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Календарь" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Календарь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:pl="http://v8.1c.ru/8.3/data/planner">pl:Planner</v8:Type>
+			</Type>
+			<Settings xmlns:pl="http://v8.1c.ru/8.3/data/planner" xsi:type="pl:Planner">
+				<pl:item>
+					<pl:value xsi:nil="true"/>
+					<pl:text>Встреча</pl:text>
+					<pl:tooltip/>
+					<pl:begin>2017-07-18T01:00:00</pl:begin>
+					<pl:end>2017-07-18T04:00:00</pl:end>
+					<pl:borderColor>auto</pl:borderColor>
+					<pl:backColor>auto</pl:backColor>
+					<pl:textColor>auto</pl:textColor>
+					<pl:font kind="AutoFont"/>
+					<pl:dimensionValues/>
+					<pl:replacementDate>0001-01-01T00:00:00</pl:replacementDate>
+					<pl:deleted>false</pl:deleted>
+					<pl:id>84d9d11f-2253-42d7-8450-3ff3876dab66</pl:id>
+				</pl:item>
+				<pl:borderColor>auto</pl:borderColor>
+				<pl:backColor>auto</pl:backColor>
+				<pl:textColor>auto</pl:textColor>
+				<pl:lineColor>auto</pl:lineColor>
+				<pl:font kind="AutoFont"/>
+				<pl:beginOfRepresentationPeriod>0001-01-01T00:00:00</pl:beginOfRepresentationPeriod>
+				<pl:endOfRepresentationPeriod>0001-01-01T00:00:00</pl:endOfRepresentationPeriod>
+				<pl:alignElementsOfTimeScale>true</pl:alignElementsOfTimeScale>
+				<pl:displayTimeScaleWrapHeaders>true</pl:displayTimeScaleWrapHeaders>
+				<pl:displayWrapHeaders>true</pl:displayWrapHeaders>
+				<pl:timeScaleWrapHeadersFormat>
+					<v8:item>
+						<v8:lang>#</v8:lang>
+						<v8:content>ДЛФ=DD</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДЛФ=DD</v8:content>
+					</v8:item>
+				</pl:timeScaleWrapHeadersFormat>
+				<pl:periodicVariantUnit>Day</pl:periodicVariantUnit>
+				<pl:periodicVariantRepetition>0</pl:periodicVariantRepetition>
+				<pl:timeScaleWrapBeginIndent>0</pl:timeScaleWrapBeginIndent>
+				<pl:timeScaleWrapEndIndent>0</pl:timeScaleWrapEndIndent>
+				<pl:timeScale>
+					<placement xmlns="http://v8.1c.ru/8.2/data/chart">Left</placement>
+					<level xmlns="http://v8.1c.ru/8.2/data/chart">
+						<measure>Hour</measure>
+						<interval>4</interval>
+						<show>true</show>
+						<line width="1" gap="false">
+							<v8ui:style xsi:type="v8ui:ChartLineType">Solid</v8ui:style>
+						</line>
+						<scaleColor>auto</scaleColor>
+						<dayFormatRule>MonthDayWeekDay</dayFormatRule>
+						<format>
+							<v8:item>
+								<v8:lang>#</v8:lang>
+								<v8:content>DF="HH:mm"</v8:content>
+							</v8:item>
+						</format>
+						<labels>
+							<ticks>0</ticks>
+						</labels>
+						<backColor>auto</backColor>
+						<textColor>auto</textColor>
+						<showPereodicalLabels>true</showPereodicalLabels>
+					</level>
+					<level xmlns="http://v8.1c.ru/8.2/data/chart">
+						<measure>Day</measure>
+						<interval>1</interval>
+						<show>false</show>
+						<line width="1" gap="false">
+							<v8ui:style xsi:type="v8ui:ChartLineType">Dotted</v8ui:style>
+						</line>
+						<scaleColor>#C0C0C0</scaleColor>
+						<dayFormatRule>MonthDayWeekDay</dayFormatRule>
+						<format>
+							<v8:item>
+								<v8:lang>#</v8:lang>
+								<v8:content>ДЛФ=DD</v8:content>
+							</v8:item>
+						</format>
+						<labels>
+							<ticks>0</ticks>
+						</labels>
+						<backColor>auto</backColor>
+						<textColor>auto</textColor>
+						<showPereodicalLabels>true</showPereodicalLabels>
+					</level>
+					<transparent xmlns="http://v8.1c.ru/8.2/data/chart">false</transparent>
+					<backColor xmlns="http://v8.1c.ru/8.2/data/chart">auto</backColor>
+					<textColor xmlns="http://v8.1c.ru/8.2/data/chart">auto</textColor>
+					<currentLevel xmlns="http://v8.1c.ru/8.2/data/chart">0</currentLevel>
+				</pl:timeScale>
+				<pl:period>
+					<pl:begin>2017-07-23T00:00:00</pl:begin>
+					<pl:end>2017-07-23T23:59:59</pl:end>
+				</pl:period>
+				<pl:displayCurrentDate>true</pl:displayCurrentDate>
+				<pl:itemsTimeRepresentation>BeginTime</pl:itemsTimeRepresentation>
+			</Settings>
+		</Attribute>
+		<Attribute name="Гант" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гант</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.2/data/chart">d5p1:GanttChart</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Сотрудник" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Проект" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проект</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Проекты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Календарик" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Календарик</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ГантВеб" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гант веб</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>
