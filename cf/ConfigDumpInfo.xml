@@ -141,8 +141,8 @@
 		<Metadata name="Report.ОплатыЗадач.Template.ОсновнаяСхемаКомпоновкиДанных" id="af586d7b-2d25-485b-a967-b6bb696270ff" configVersion="d03253235ccd1449bbe8cbe7cf5edbec00000000"/>
 		<Metadata name="Report.ОплатыЗадач.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="af586d7b-2d25-485b-a967-b6bb696270ff.0" configVersion="916de15277253f4399107fc8b5dfb1e000000000"/>
 		<Metadata name="Report.ПредварительнаяСтоимостьЗадач" id="3f5a5275-fe8b-49eb-b792-a7d91147d0ea" configVersion="60737fa79803ae44b4e6d39e49e4c70900000000"/>
-		<Metadata name="Report.ПредварительнаяСтоимостьЗадач.Template.ОсновнаяСхемаКомпоновкиДанных" id="f2471053-079d-497c-81f2-33c2590711e0" configVersion="415ce0bda357de43a60c6c8b368ed07400000000"/>
-		<Metadata name="Report.ПредварительнаяСтоимостьЗадач.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f2471053-079d-497c-81f2-33c2590711e0.0" configVersion="02fc0fffbfaf1741bd5070a97a340c1c00000000"/>
+		<Metadata name="Report.ПредварительнаяСтоимостьЗадач.Template.ОсновнаяСхемаКомпоновкиДанных" id="f2471053-079d-497c-81f2-33c2590711e0" configVersion="d94de4252fbd55459e81a471a484eca900000000"/>
+		<Metadata name="Report.ПредварительнаяСтоимостьЗадач.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f2471053-079d-497c-81f2-33c2590711e0.0" configVersion="d65b205510fc5745a6294485a905db6500000000"/>
 		<Metadata name="Role.root" id="35da704a-c224-4412-97fa-ffd7131e70e9" configVersion="cf186c79654f574f8c2612fc11dfce5600000000"/>
 		<Metadata name="Role.root.Rights" id="35da704a-c224-4412-97fa-ffd7131e70e9.0" configVersion="bb0e22148d36104bafa281fcd02e8c9e00000000"/>
 		<Metadata name="Role.Заказчик" id="730ace60-0a0b-4853-baa5-893b047907c1" configVersion="de81e52aaf0c104fb293780c2ee94bb400000000"/>
