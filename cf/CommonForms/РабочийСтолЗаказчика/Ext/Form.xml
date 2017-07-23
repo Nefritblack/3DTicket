@@ -4,6 +4,66 @@
 	<CommandBarLocation>None</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
+		<UsualGroup name="Документы" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчеты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Collapsible</Behavior>
+			<ExtendedTooltip name="ДокументыРасширеннаяПодсказка" id="18"/>
+			<ChildItems>
+				<LabelDecoration name="ОткрытьЗадачи" id="25">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задачи</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="ОткрытьЗадачиКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ОткрытьЗадачиРасширеннаяПодсказка" id="27"/>
+					<Events>
+						<Event name="Click">ОткрытьЗадачиНажатие</Event>
+					</Events>
+				</LabelDecoration>
+				<LabelDecoration name="ОткрытьСчета" id="19">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счета</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="ОткрытьСчетаКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ОткрытьСчетаРасширеннаяПодсказка" id="21"/>
+					<Events>
+						<Event name="Click">ОткрытьСчетаНажатие</Event>
+					</Events>
+				</LabelDecoration>
+				<LabelDecoration name="ОткрытьОплаты" id="22">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="ОткрытьОплатыКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ОткрытьОплатыРасширеннаяПодсказка" id="24"/>
+					<Events>
+						<Event name="Click">ОткрытьОплатыНажатие</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="Отчеты" id="1">
 			<Title>
 				<v8:item>
