@@ -135,6 +135,9 @@
 			<CommonModule>КлиентГлобальный</CommonModule>
 			<CommonModule>МодульКлиента</CommonModule>
 			<CommonModule>УчетВремени</CommonModule>
+			<CommonModule>unityApi</CommonModule>
+			<CommonModule>json</CommonModule>
+			<HTTPService>unity</HTTPService>
 			<DefinedType>Рубли</DefinedType>
 			<DefinedType>Секунда</DefinedType>
 			<DefinedType>Час</DefinedType>
@@ -150,6 +153,7 @@
 			<Document>Оплата</Document>
 			<Report>ПредварительнаяСтоимостьЗадач</Report>
 			<Report>ОплатыЗадач</Report>
+			<DataProcessor>ОтдадкаВебСервисов</DataProcessor>
 			<InformationRegister>ИсторияРеквизитовЗадач</InformationRegister>
 			<InformationRegister>ИсторияОписанийЗадач</InformationRegister>
 			<InformationRegister>КомментарииЗадач</InformationRegister>

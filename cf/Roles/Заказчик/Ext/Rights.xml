@@ -166,6 +166,13 @@
 		</right>
 	</object>
 	<object>
+		<name>HTTPService.unity.URLTemplate.Задачи.Method.Получить</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.Проекты</name>
 		<right>
 			<name>Read</name>
