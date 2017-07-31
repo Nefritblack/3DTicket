@@ -4,12 +4,25 @@
 	<UsePostingMode>Auto</UsePostingMode>
 	<RepostOnWrite>true</RepostOnWrite>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
 	<ChildItems>
 		<UsualGroup name="Группа1" id="41">
 			<Group>Horizontal</Group>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="42"/>
 			<ChildItems>
+				<InputField name="Операция" id="59">
+					<DataPath>Объект.Операция</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.root">true</xr:Value>
+					</UserVisible>
+					<ContextMenu name="ОперацияКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="ОперацияРасширеннаяПодсказка" id="61"/>
+				</InputField>
 				<InputField name="Проект" id="10">
 					<DataPath>Объект.Проект</DataPath>
 					<EditMode>EnterOnInput</EditMode>
@@ -18,6 +31,10 @@
 				</InputField>
 				<InputField name="Дата" id="4">
 					<DataPath>Объект.Date</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.root">true</xr:Value>
+					</UserVisible>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
 					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
@@ -32,6 +49,7 @@
 		</UsualGroup>
 		<Table name="Задачи" id="13">
 			<Representation>List</Representation>
+			<Footer>true</Footer>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
@@ -45,6 +63,33 @@
 						<CommandName>Form.Command.Заполнить</CommandName>
 						<ExtendedTooltip name="ЗадачиЗаполнитьРасширеннаяПодсказка" id="44"/>
 					</Button>
+					<ButtonGroup name="КнопкиСогласования" id="69">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Кнопки согласования</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Кнопки согласования</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="КнопкиСогласованияРасширеннаяПодсказка" id="70"/>
+						<ChildItems>
+							<Button name="ЗадачиВсеСогласовано" id="65">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВсеСогласовано</CommandName>
+								<ExtendedTooltip name="ЗадачиВсеСогласованоРасширеннаяПодсказка" id="66"/>
+							</Button>
+							<Button name="ЗадачиВсеНеСогласовано" id="67">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВсеНеСогласовано</CommandName>
+								<ExtendedTooltip name="ЗадачиВсеНеСогласованоРасширеннаяПодсказка" id="68"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
 				</ChildItems>
 			</AutoCommandBar>
 			<ExtendedTooltip name="ЗадачиРасширеннаяПодсказка" id="16"/>
@@ -72,6 +117,9 @@
 				<ContextMenu name="ЗадачиУправлениеПоискомКонтекстноеМеню" id="24"/>
 				<ExtendedTooltip name="ЗадачиУправлениеПоискомРасширеннаяПодсказка" id="25"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="OnChange">ЗадачиПриИзменении</Event>
+			</Events>
 			<ChildItems>
 				<LabelField name="ЗадачиНомерСтроки" id="26">
 					<DataPath>Объект.Задачи.LineNumber</DataPath>
@@ -101,6 +149,14 @@
 					<ContextMenu name="ЗадачиСекундКонтекстноеМеню" id="36"/>
 					<ExtendedTooltip name="ЗадачиСекундРасширеннаяПодсказка" id="37"/>
 				</InputField>
+				<CheckBoxField name="ЗадачиСогласовано" id="62">
+					<DataPath>Объект.Задачи.Согласовано</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗадачиСогласованоКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="ЗадачиСогласованоРасширеннаяПодсказка" id="64"/>
+				</CheckBoxField>
 				<InputField name="ЗадачиСумма" id="38">
 					<DataPath>Объект.Задачи.Сумма</DataPath>
 					<EditMode>EnterOnInput</EditMode>
@@ -110,36 +166,6 @@
 				</InputField>
 			</ChildItems>
 		</Table>
-		<UsualGroup name="Группа2" id="48">
-			<Group>Horizontal</Group>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="49"/>
-			<ChildItems>
-				<LabelDecoration name="Декорация1" id="50">
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<HorizontalStretch>true</HorizontalStretch>
-					<ContextMenu name="Декорация1КонтекстноеМеню" id="51"/>
-					<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="52"/>
-				</LabelDecoration>
-				<LabelField name="ЗадачиКоличествоСтрок" id="56">
-					<DataPath>Объект.Задачи.RowsCount</DataPath>
-					<ContextMenu name="ЗадачиКоличествоСтрокКонтекстноеМеню" id="57"/>
-					<ExtendedTooltip name="ЗадачиКоличествоСтрокРасширеннаяПодсказка" id="58"/>
-				</LabelField>
-				<LabelField name="ЗадачиИтогСекунд" id="53">
-					<DataPath>Объект.Задачи.TotalСекунд</DataPath>
-					<ContextMenu name="ЗадачиИтогСекундКонтекстноеМеню" id="54"/>
-					<ExtendedTooltip name="ЗадачиИтогСекундРасширеннаяПодсказка" id="55"/>
-				</LabelField>
-				<LabelField name="ЗадачиИтогСумма" id="45">
-					<DataPath>Объект.Задачи.TotalСумма</DataPath>
-					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
-					<ContextMenu name="ЗадачиИтогСуммаКонтекстноеМеню" id="46"/>
-					<ExtendedTooltip name="ЗадачиИтогСуммаРасширеннаяПодсказка" id="47"/>
-				</LabelField>
-			</ChildItems>
-		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -151,6 +177,9 @@
 			<UseAlways>
 				<Field>Объект.RegisterRecords</Field>
 			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.Задачи"/>
+			</Columns>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -168,6 +197,44 @@
 				</v8:item>
 			</ToolTip>
 			<Action>Заполнить</Action>
+		</Command>
+		<Command name="ВсеСогласовано" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все согласовано</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все согласовано</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВсеСогласовано</Action>
+		</Command>
+		<Command name="ВсеНеСогласовано" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все не согласовано</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все не согласовано</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВсеНеСогласовано</Action>
 		</Command>
 	</Commands>
 </Form>

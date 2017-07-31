@@ -146,6 +146,7 @@
 			<CommonModule>УчетВремени</CommonModule>
 			<CommonModule>unityApi</CommonModule>
 			<CommonModule>json</CommonModule>
+			<CommonModule>Права</CommonModule>
 			<HTTPService>unity</HTTPService>
 			<DefinedType>Рубли</DefinedType>
 			<DefinedType>Секунда</DefinedType>
@@ -160,6 +161,7 @@
 			<Document>Задача</Document>
 			<Document>СчетНаОплату</Document>
 			<Document>Оплата</Document>
+			<Enum>ОперацияСчета</Enum>
 			<Report>ПредварительнаяСтоимостьЗадач</Report>
 			<Report>ОплатыЗадач</Report>
 			<DataProcessor>ОтдадкаВебСервисов</DataProcessor>
