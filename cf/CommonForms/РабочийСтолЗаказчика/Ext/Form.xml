@@ -4,6 +4,38 @@
 	<CommandBarLocation>None</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
+		<UsualGroup name="Загрузка" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузка сотрудников</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчеты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Collapsible</Behavior>
+			<ExtendedTooltip name="ЗагрузкаРасширеннаяПодсказка" id="29"/>
+			<ChildItems>
+				<LabelDecoration name="ОткрытьTimeLine" id="30">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Time line</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="ОткрытьTimeLineКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ОткрытьTimeLineРасширеннаяПодсказка" id="32"/>
+					<Events>
+						<Event name="Click">ОткрытьTimeLineНажатие</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="Документы" id="17">
 			<Title>
 				<v8:item>

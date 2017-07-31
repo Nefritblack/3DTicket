@@ -129,6 +129,15 @@
 			<Role>Заказчик</Role>
 			<CommonTemplate>РабочийСтол</CommonTemplate>
 			<CommonTemplate>ДиаграмаГанта</CommonTemplate>
+			<CommonTemplate>timeLine_0</CommonTemplate>
+			<CommonTemplate>timeLine_1</CommonTemplate>
+			<CommonTemplate>timeLine_2</CommonTemplate>
+			<CommonTemplate>timeLine_3</CommonTemplate>
+			<CommonTemplate>timeLine_4</CommonTemplate>
+			<CommonTemplate>timeLine_5</CommonTemplate>
+			<CommonTemplate>_3DText</CommonTemplate>
+			<CommonTemplate>Timer_1</CommonTemplate>
+			<CommonTemplate>Timer_2</CommonTemplate>
 			<CommonModule>ОбщиеФункции</CommonModule>
 			<CommonModule>КонвертацияТипов</CommonModule>
 			<CommonModule>ОтборыСписковКлиентСервер</CommonModule>
@@ -154,6 +163,7 @@
 			<Report>ПредварительнаяСтоимостьЗадач</Report>
 			<Report>ОплатыЗадач</Report>
 			<DataProcessor>ОтдадкаВебСервисов</DataProcessor>
+			<DataProcessor>BaseHTML</DataProcessor>
 			<InformationRegister>ИсторияРеквизитовЗадач</InformationRegister>
 			<InformationRegister>ИсторияОписанийЗадач</InformationRegister>
 			<InformationRegister>КомментарииЗадач</InformationRegister>

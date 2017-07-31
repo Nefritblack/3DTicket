@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=10"></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="GENERATOR" content="MSHTML 11.00.10570.1001"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"></meta><meta name="HandheldFriendly" content="true"></meta><script>
+var ge1doot = ge1doot || {
+	/*
+	         \|||/
+	         (o o)
+	+~~~~ooO~~(_)~~~~~~~~+
+	| Please             |
+	| don't feed the     |
+	| TROLLS !           |
+	+~~~~~~~~~~~~~~Ooo~~~+
+	        |__|__|
+	         || ||
+	        ooO Ooo
+	*/
+	
+	screen: {
+		elem:     null,
+		callback: null,
+		ctx:      null,
+		width:    0,
+		height:   0,
+		left:     0,
+		top:      0,
+		init: function (id, callback, initRes) {
+			this.elem = document.getElementById(id);
+			this.callback = callback || null;
+			if (this.elem.tagName == "CANVAS") this.ctx = this.elem.getContext("2d");
+			window.addEventListener('resize', function () {
+				this.resize();
+			}.bind(this), false);
+			this.elem.onselectstart = function () { return false; }
+			this.elem.ondrag        = function () { return false; }
+			initRes && this.resize();
+			return this;
+		},
+		resize: function () {
+			var o = this.elem;
+			this.width  = o.offsetWidth;
+			this.height = o.offsetHeight;
+			for (this.left = 0, this.top = 0; o != null; o = o.offsetParent) {
+				this.left += o.offsetLeft;
+				this.top  += o.offsetTop;
+			}
+			if (this.ctx) {
+				this.elem.width  = this.width;
+				this.elem.height = this.height;
+			}
+			this.callback && this.callback();
+		},
+		pointer: {
+			screen:   null,
+			elem:     null,
+			callback: null,
+			pos:   {x:0, y:0},
+			mov:   {x:0, y:0},
+			drag:  {x:0, y:0},
+			start: {x:0, y:0},
+			end:   {x:0, y:0},
+			active: false,
+			touch: false,
+			down: function (e, touch) {
+				this.touch = touch;
+				e.preventDefault();
+				var pointer = touch ? e.touches[0] : e;
+				(!touch && document.setCapture) && document.setCapture();
+				this.pos.x = this.start.x = pointer.clientX - this.screen.left;
+				this.pos.y = this.start.y = pointer.clientY - this.screen.top;
+				this.active = true;
+				this.callback.down && this.callback.down();
+			},
+			up: function (e, touch) {
+				this.touch = touch;
+				e.preventDefault();
+				(!touch && document.releaseCapture) && document.releaseCapture();
+				this.end.x = this.drag.x;
+				this.end.y = this.drag.y;
+				this.active = false;
+				this.callback.up && this.callback.up();
+			},
+			move: function (e, touch) {
+				this.touch = touch;
+				e.preventDefault();
+				var pointer = touch ? e.touches[0] : e;
+				this.mov.x = pointer.clientX - this.screen.left;
+				this.mov.y = pointer.clientY - this.screen.top;
+				if (this.active) {
+					this.pos.x = this.mov.x;
+					this.pos.y = this.mov.y;
+					this.drag.x = this.end.x - (this.pos.x - this.start.x);
+					this.drag.y = this.end.y - (this.pos.y - this.start.y);
+					this.callback.move && this.callback.move();
+				}
+			},
+			init: function (callback) {
+				this.screen = ge1doot.screen;
+				this.elem = this.screen.elem;
+				this.callback = callback || {};
+				if ('ontouchstart' in window) {
+					// touch
+					this.elem.ontouchstart  = function (e) { this.down(e, true); }.bind(this);
+					this.elem.ontouchmove   = function (e) { this.move(e, true); }.bind(this);
+					this.elem.ontouchend    = function (e) { this.up(e, true);   }.bind(this);
+					this.elem.ontouchcancel = function (e) { this.up(e, true);   }.bind(this);
+				}
+				// mouse
+				document.addEventListener("mousedown", function (e) { this.down(e, false); }.bind(this), true);
+				document.addEventListener("mousemove", function (e) { this.move(e, false); }.bind(this), true);
+				document.addEventListener("mouseup",   function (e) { this.up  (e, false); }.bind(this), true);
+				return this;
+			}
+		},
+		loadImages: function (container) {
+			var elem = document.getElementById(container),
+			canvas = document.createElement('canvas'), ctx,
+			init = false, complete = false,
+			n = document.images.length;
+			function arc(color, val, r) {
+				ctx.beginPath();
+				ctx.moveTo(50,50);
+				ctx.arc(50, 50, r, 0, val);
+				ctx.fillStyle = color;
+				ctx.fill();
+				ctx.closePath();
+			}
+			function load () {
+				if (complete) {
+					canvas.style.display = "none";
+					return;
+				}
+				var m = 0, timer = 32;
+				for(var i = 0; i < n; i++) m += (document.images[i].complete)?1:0;
+				if (m < n) {
+					if (!init) {
+						init = true;
+						canvas.style.width = canvas.style.height = "100px";
+						canvas.width = canvas.height = 100;
+						canvas.style.position = "fixed";
+						canvas.style.left = canvas.style.top = "50%";
+						canvas.style.marginTop = canvas.style.marginLeft = "-50px";
+						canvas.style.zIndex = 10000;
+						ctx = canvas.getContext("2d");
+						arc('rgb(64,64,64)', Math.PI*2, 48);
+						elem.appendChild(canvas);
+					}
+					arc('rgb(255,255,255)', (m / n) * 2 * Math.PI, 50);
+				} else {
+					if (init) {
+						arc('rgb(255,255,255)', 2 * Math.PI, 50);
+						timer = 300;
+					}
+					complete = true;
+				}
+				setTimeout(load, timer);
+			}
+			setTimeout(load, 32);
+		}
+	}
+}
+</script><style>
+
+html, body {
+	touch-action:none;
+	content-zooming:none;
+	position:absolute;
+	margin:0;
+	padding:0;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background:#000;
+}
+
+#canvas {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width:600px;
+	height:300px;
+	margin-left: -300px;
+	margin-top:-150px;
+}
+
+</style></head><body><canvas id="canvas" width="0" height="0"></canvas><script>
+
+// December 2005
+// inspired by http://www.dataway.ch/~bennet/java/3DClock.html
+! function() {
+  "use strict";
+  // ==== init ====
+  var digits = [
+      "#####  #  ###########   ##########################     ",
+      "#   #  #      #    ##   ##    #        ##   ##   #     ",
+      "#   #  #      #    ##   ##    #        ##   ##   #  #  ",
+      "#   #  #  ##### ###################    ###########     ",
+      "#   #  #  #        #    #    ##   #    ##   #    #  #  ",
+      "#   #  #  #        #    #    ##   #    ##   #    #     ",
+      "#####  #  ##########    ###########    ###########     "
+    ],
+    dots = [],
+    px = 0,
+    py = 0,
+    rx = 0,
+    ry = 0,
+    rz = 1000,
+    TM = [],
+    Tm = [],
+    crx, srx, cry, sry,
+    screen = ge1doot.screen.init("canvas", null, true),
+    ctx = screen.ctx,
+    pointer = screen.pointer.init({
+      down: function() {
+        pointer.drag.x = px;
+        pointer.drag.y = py;
+        pointer.end.x = px;
+        pointer.end.y = py;
+      },
+      move: function() {
+        var d = Math.max(screen.width, screen.height) * 2;
+        px = pointer.drag.x / d;
+        py = pointer.drag.y / d;
+      }
+    });
+
+  // background texture
+  var texture = document.createElement('canvas');
+  texture.width = screen.width;
+  texture.height = screen.height;
+  var ict = texture.getContext('2d');
+  for (var i = 0; i < screen.width + 5; i += 5) {
+    for (var j = 0; j < screen.height + 5; j += 5) {
+      ict.beginPath();
+      ict.arc(i, j, 2, 0, 2 * Math.PI);
+      ict.fillStyle = 'rgb(0,0,0)';
+      ict.fill();
+      ict.closePath();
+    }
+  }
+  ict.globalCompositeOperation = 'xor';
+  ict.beginPath();
+  ict.fillStyle = 'rgb(32,32,0)';
+  ict.fillRect(0, 0, screen.width, screen.height);
+  ict.closePath();
+  // HH:MM:SS
+  function toc() {
+    var t = new Date(),
+        h = t.getHours(),
+        m = t.getMinutes(),
+        s = t.getSeconds();
+    TM = [
+      Math.floor(h / 10), h % 10,
+      Math.floor(m / 10), m % 10,
+      Math.floor(s / 10), s % 10
+    ];
+    var k = 0;
+    for (var i = 0; i < 6; i++) {
+      if (TM[i] != Tm[i]) {
+        Tm[i] = TM[i];
+        digit(k, TM[i]);
+      }
+      k += (i == 1 || i == 3) ? 2 : 1;
+    }
+  }
+  toc();
+  setInterval(toc, 1000);
+  digit(2, 10);
+  digit(5, 10);
+  // make digit
+  function digit(n, d) {
+    for (var i = 0; i < dots.length; i++) {
+      if (dots[i].n == n) {
+        dots.splice(i--, 1);
+      }
+    }
+    for (var i = 0; i < 7; i++) {
+      for (var j = 0; j < 5; j++) {
+        if (digits[i].charAt(5 * d + j) != " ") {
+          dots.push(
+            new Dot(
+              (36 * n + j * 6) / (180 / Math.PI), -84 + i * 24,
+              n
+            )
+          );
+        }
+      }
+    }
+  }
+  // dot constructor
+  function Dot(a, z, n) {
+    this.n = n;
+    this.a = a;
+    this.z = z;
+    this.x = 0;
+    this.y = 0;
+    this.w = 0;
+    this.c = 0;
+  }
+  // dot 3D calculation
+  Dot.prototype.anim = function() {
+    var x, y, r, x1, y1, zz, c;
+    // z axis rotation
+    x = Math.sin(rz + this.a) * 200;
+    y = Math.cos(rz + this.a) * 200;
+    x1 = y * crx - this.z * srx;
+    zz = y * srx + this.z * crx;
+    y1 = x * cry - zz * sry;
+    zz = x * sry + zz * cry;
+    // 2D projection
+    r = 500 / (500 + zz);
+    this.x = screen.width * 0.5 - x1 / r;
+    this.y = screen.height * 0.5 - y1 / r;
+    this.w = 4 + (200 + zz) * 0.025;
+    this.c = 200 + (zz / 2 | 0);
+  }
+  // dot painting
+  Dot.prototype.plot = function() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.w, 0, 2 * Math.PI);
+    ctx.fillStyle = "rgb(" + this.c + "," + this.c + ",0)";
+    ctx.fill();
+  }
+  // main loop
+  function run() {
+    requestAnimationFrame(run);
+    ctx.fillStyle = "rgba(0,0,0,0.25)";
+    ctx.fillRect(0, 0, screen.width, screen.height);
+    rz -= Math.PI / 200;
+    rx += px;
+    ry += py;
+    crx = Math.cos(rx);
+    srx = Math.sin(rx);
+    cry = Math.cos(ry + Math.PI / 2);
+    sry = Math.sin(ry + Math.PI / 2);
+    rx *= 0.98;
+    ry *= 0.98;
+    px *= 0.98;
+    py *= 0.98;
+    // calculate 3D
+    for (var i = 0, dot; dot = dots[i++];) {
+      dot.anim();
+    }
+    // z-index sorting
+    dots.sort(function(p0, p1) {
+      return p0.w - p1.w;
+    });
+    // draw plots
+    for (var i = 0, dot; dot = dots[i++];) {
+      dot.plot();
+    }
+    ctx.drawImage(texture, 0, 0);
+  }
+  requestAnimationFrame(run);
+}();
+
+</script></body></html>

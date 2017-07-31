@@ -1,7 +1,7 @@
 ﻿<HTML><HEAD>
-<META content="" http-equiv="" x-ua-compatible="" ie='10""/'></META>
+<meta http-equiv="X-UA-Compatible" content="IE=10"/>
 <META content="text/html; charset=utf-8" http-equiv=Content-Type>
-<META name=GENERATOR content="MSHTML 11.00.10570.1001">
+<META name=GENERATOR content="MSHTML 11.00.9600.18639">
 
 <!-- Styles -->
 <style>
