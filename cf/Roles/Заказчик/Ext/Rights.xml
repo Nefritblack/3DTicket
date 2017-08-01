@@ -90,6 +90,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Document.СчетНаОплату.Command.ПечатьСчета</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>SessionParameter.ТекущийПользователь</name>
 		<right>
 			<name>Get</name>

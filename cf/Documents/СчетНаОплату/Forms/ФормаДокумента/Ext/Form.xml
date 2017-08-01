@@ -47,6 +47,24 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="Группа2" id="74">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="75"/>
+			<ChildItems>
+				<InputField name="Исполнитель" id="76">
+					<DataPath>Объект.Исполнитель</DataPath>
+					<ContextMenu name="ИсполнительКонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="ИсполнительРасширеннаяПодсказка" id="78"/>
+				</InputField>
+				<InputField name="ПериодОплаты" id="71">
+					<DataPath>Объект.ПериодОплаты</DataPath>
+					<ContextMenu name="ПериодОплатыКонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="ПериодОплатыРасширеннаяПодсказка" id="73"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<Table name="Задачи" id="13">
 			<Representation>List</Representation>
 			<Footer>true</Footer>

@@ -152,6 +152,7 @@
 			<DefinedType>Секунда</DefinedType>
 			<DefinedType>Час</DefinedType>
 			<CommonCommand>ОткрытьУчетВремени</CommonCommand>
+			<CommandGroup>Печать</CommandGroup>
 			<CommonForm>РабочийСтол</CommonForm>
 			<CommonForm>РабочийСтолЗаказчика</CommonForm>
 			<CommonForm>ЗагруженностьСотрудника</CommonForm>
